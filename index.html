@@ -3,86 +3,530 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi friends</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+    <title>Timothy Hidalgo - VP, Cybersecurity</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background: linear-gradient(120deg, #020202, #0c0c0c, #111);
-            color: #0ff; /* Neon cyan */
-            font-family: 'Orbitron', sans-serif;
-            text-align: center;
-            padding: 5%;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-size: 2rem;
-            text-shadow: 0px 0px 8px #0ff, 0px 0px 15px #00ffff;
-            animation: glitch 1s infinite alternate;
-        }
-
-        @keyframes glitch {
-            0% { text-shadow: 2px 2px 5px #0ff, -2px -2px 5px #f0f; }
-            100% { text-shadow: -2px -2px 5px #0ff, 2px 2px 5px #f0f; }
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0a0a0a;
         }
 
         .container {
-            max-width: 600px;
-            margin: auto;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #00ffff;
-            box-shadow: 0px 0px 15px #00ffff;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 100vh;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
         }
 
-        .bmc-button {
-            background: #ff00ff;
-            color: #000;
-            font-size: 1.5rem;
-            padding: 15px 25px;
-            text-decoration: none;
-            border: 2px solid #00ffff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #ff00ff, 0px 0px 20px #ff00ff;
-            transition: all 0.3s ease-in-out;
+        /* Left Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #0d1321 100%);
+            color: #e0e0e0;
+            padding: 40px 30px;
+            border-right: 2px solid #415a77;
+        }
+
+        .photo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .photo-placeholder {
+            width: 150px;
+            height: 150px;
+            background: #415a77;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            border: 4px solid #778da9;
+        }
+
+        .sidebar h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #415a77;
+            color: #778da9;
+        }
+
+        .sidebar h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        .contact-item i {
+            width: 20px;
             display: inline-block;
-            margin-top: 20px;
         }
 
-        .bmc-button:hover {
-            background: #00ffff;
-            color: #000;
-            box-shadow: 0px 0px 20px #00ffff, 0px 0px 30px #00ffff;
-            transform: scale(1.1);
+        .sidebar ul {
+            list-style: none;
         }
 
-        .scanlines {
-            position: fixed;
-            top: 0;
+        .sidebar li {
+            margin-bottom: 8px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .cert-item {
+            margin-bottom: 12px;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            font-size: 13px;
+            color: #778da9;
+        }
+
+        .cert-org {
+            font-size: 12px;
+            color: #a8b4c4;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 50px 60px;
+            background: #1a1a1a;
+            color: #d0d0d0;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            color: #778da9;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .header .title {
+            font-size: 18px;
+            color: #415a77;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .header .credentials {
+            font-size: 14px;
+            color: #a8b4c4;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #778da9;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #415a77;
+            font-weight: 700;
+        }
+
+        .summary {
+            text-align: justify;
+            line-height: 1.8;
+            color: #c0c0c0;
+            font-size: 14px;
+        }
+
+        .job {
+            margin-bottom: 30px;
+        }
+
+        .job-header {
+            margin-bottom: 12px;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #778da9;
+            margin-bottom: 3px;
+        }
+
+        .job-company {
+            font-size: 15px;
+            color: #415a77;
+            font-weight: 600;
+        }
+
+        .job-period {
+            font-size: 13px;
+            color: #a8b4c4;
+            font-style: italic;
+        }
+
+        .job-subsection {
+            font-weight: 600;
+            color: #778da9;
+            margin-top: 12px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .job ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .job li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+            font-size: 13.5px;
+            color: #c0c0c0;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .training-category {
+            margin-bottom: 20px;
+        }
+
+        .training-category h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #778da9;
+            margin-bottom: 8px;
+        }
+
+        .training-category ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .training-category li {
+            font-size: 12.5px;
+            margin-bottom: 6px;
+            color: #b0b0b0;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .training-category li:before {
+            content: "▸";
+            position: absolute;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.2),
-                rgba(0, 0, 0, 0.2) 2px,
-                transparent 2px,
-                transparent 4px
-            );
-            pointer-events: none;
-            opacity: 0.3;
+            color: #778da9;
+        }
+
+        .skills-list {
+            line-height: 1.9;
+            font-size: 13.5px;
+            color: #c0c0c0;
+        }
+
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-category strong {
+            color: #778da9;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @media print {
+            body {
+                background: #1a1a1a;
+            }
+            .container {
+                box-shadow: none;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>i like computers, synthesizers, and cats.</h1>
-        <h2>If you like me and we are friends, click below :)</h2>
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="photo-section">
+                <img src="Gemini_Generated_Image_lh186xlh186xlh18.png" alt="Timothy Hidalgo" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #778da9; object-fit: cover;">
+            </div>
 
-        <a class="bmc-button" href="https://www.buymeacoffee.com/digitalohm">Buy me a coffee</a>
+            <h2>Contact Details</h2>
+            <div class="contact-item">
+                <strong>Location:</strong> Riverside, California
+            </div>
+            <div class="contact-item">
+                <strong>Email:</strong> tim.hidalgo@gmail.com
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong> linkedin.com/in/timhidalgo
+            </div>
+
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>Bachelor of Science</strong><br>
+                    Applied Cybersecurity<br>
+                    SANS Technology Institute<br>
+                    <em>In Progress - Dec 2026</em>
+                </li>
+                <li style="margin-top: 15px;">
+                    <strong>Coursework</strong><br>
+                    Computer Science & General Education<br>
+                    Riverside City College
+                </li>
+            </ul>
+
+            <h2>Key Certifications</h2>
+            <div class="cert-item">
+                <div class="cert-name">CISSP</div>
+                <div class="cert-org">(ISC)2</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-name">CRTO</div>
+                <div class="cert-org">Certified Red Team Operator</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-name">CRTE</div>
+                <div class="cert-org">Certified Red Team Expert (Previously Held)</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-name">GSTRT</div>
+                <div class="cert-org">GIAC Strategic Planning</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-name">GSOM</div>
+                <div class="cert-org">GIAC Security Ops Manager</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-name">GCIH</div>
+                <div class="cert-org">GIAC Incident Handler</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-name">OSWP</div>
+                <div class="cert-org">OffSec Wireless Professional</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-name">Azure Security Engineer</div>
+                <div class="cert-org">Microsoft Certified (Previously held)</div>
+            </div>
+
+            <h2>Technical Focus</h2>
+            <ul>
+                <li>Red Team Operations</li>
+                <li>Cloud Security (Azure, AWS, GCP)</li>
+                <li>Data Protection & Insider Risk</li>
+                <li>Adversarial Simulation</li>
+                <li>Purple Team Exercises</li>
+                <li>Offensive Tool Development</li>
+                <li>C2 Frameworks</li>
+                <li>SIEM Engineering</li>
+                <li>Threat Hunting</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>TIMOTHY HIDALGO</h1>
+                <div class="title">VP, Cybersecurity – Offensive Security & Enterprise Risk</div>
+                <div class="credentials">CISSP | GIAC (GSTRT, GSOM, GCIH) | CRTO | CRTE</div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Executive Summary</h3>
+                <div class="summary">
+                    VP-level cybersecurity leader with 10+ years of progressive experience owning offensive security, data risk, and security operations across regulated financial services and consulting environments. Lead adversarial testing and purple team programs with external partners, lead detection and incident response teams, and translate technical exposure into executive risk decisions. Maintain hands-on depth across offensive tradecraft, cloud security architecture, and adversarial simulation in complex multi-cloud estates.
+                    <br><br>
+                    Known for maturing security programs without losing business velocity: data protection and insider risk, pragmatic SOC and SOAR workflows, and tool integration that drives real response outcomes. Trusted advisor to executives for risk prioritization, investment strategy, and control gaps impacting high-value data.
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Professional Experience</h3>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">VP, Cybersecurity</div>
+                        <div class="job-company">Antares Capital LP | Financial Services</div>
+                        <div class="job-period">Jun 2023 - Present | Hybrid</div>
+                    </div>
+
+                    <div class="job-subsection">Leadership & Strategy</div>
+                    <ul>
+                        <li>Lead team of 5 security engineers operating across SOC, TVM, and DLP domains supporting a global financial services environment handling sensitive investment, deal, and client data, reporting directly to the CISO</li>
+                        <li>Own data protection and insider risk posture, including DLP, sensitivity labeling, and exfiltration scenarios for high-value investment data</li>
+                        <li>Guide SOC operations and 24x7 MSSP partnership, focusing on signal quality, escalation decisions, and response outcomes</li>
+                        <li>Drive risk-based security priorities, advising executives on threat exposure, control effectiveness, and investment tradeoffs</li>
+                        <li>Maintain NIST and SOC 2 compliance across security operations, collaborating with GRC team on control implementation and evidence collection</li>
+                        <li>Regularly brief executive leadership on threat exposure, control gaps, and material cyber risk, enabling informed business and investment decisions</li>
+                    </ul>
+
+                    <div class="job-subsection">Offensive Security & Adversarial Operations</div>
+                    <ul>
+                        <li>Own enterprise adversarial testing and purple team strategy, directing external partners to assess detection, response, and containment effectiveness across cloud and on-prem environments.</li>
+                        <li>Develop threat-informed scenarios to test detection, response, and containment workflows across cloud and on-prem environments</li>
+                        <li>Lead detection engineering and incident response improvements, refining rules, playbooks, and analyst decision-making</li>
+                        <li>Influence tool integration and alert-to-action workflows across SIEM, DLP, and data security platforms</li>
+                        <li>Mentor security engineers, elevating team capabilities in offensive tradecraft and adversarial thinking</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">Adversarial Testing Lead</div>
+                        <div class="job-company">PLEX Cyber | Security Consulting</div>
+                        <div class="job-period">Oct 2022 - Jun 2023 | Remote</div>
+                    </div>
+                    <ul>
+                        <li>Led offensive security practice, establishing red team and penetration testing methodologies, quality standards, and operational processes from ground up</li>
+                        <li>Managed technical operations including resource allocation, operator scheduling, and engagement delivery across cloud, web, network, and internal assessments</li>
+                        <li>Conducted advanced penetration testing across multi-cloud environments, identifying critical attack paths and security control deficiencies</li>
+                        <li>Operationalized SpecterOps Ghostwriter for enterprise engagement management, streamlining reporting and Rules of Engagement</li>
+                        <li>Provided technical guidance and training for junior offensive security professionals, developing standardized methodologies</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">Azure Security Architect</div>
+                        <div class="job-company">Kestra Financial | Financial Services</div>
+                        <div class="job-period">Sep 2021 - Jun 2023 | Remote/Contract</div>
+                    </div>
+                    <ul>
+                        <li>Designed and executed Azure-based red team infrastructure for continuous adversarial testing and attack path validation</li>
+                        <li>Conducted "crystal box" penetration testing of Azure resources, leveraging insider knowledge to identify realistic attack vectors</li>
+                        <li>Executed continuous red team operations to identify security gaps, validate defensive controls, and measure detection capabilities</li>
+                        <li>Led Azure Sentinel (SIEM) implementation across enterprise environment in collaboration with DevOps and infrastructure teams</li>
+                        <li>Developed comprehensive Vulnerability Management program across Azure and on-premises infrastructure</li>
+                        <li>Created MSTICPY Microsoft Sentinel Notebooks for advanced threat hunting and security data analysis</li>
+                        <li>Developed custom offensive tooling and automation using Python for Azure API interactions and security assessments</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">Sr. Security Architect</div>
+                        <div class="job-company">California Regional MLS (CRMLS)</div>
+                        <div class="job-period">Jan 2021 - Aug 2021</div>
+                    </div>
+                    <ul>
+                        <li>Led enterprise security program development including vulnerability management, security policies, and change management frameworks</li>
+                        <li>Successfully procured, configured, and implemented Azure Sentinel SIEM and Microsoft Defender for Endpoint</li>
+                        <li>Conducted penetration testing and red team operations using Metasploit, Covenant C2 framework, and Burp Suite</li>
+                        <li>Directed CIS 18 controls implementation project following Rapid7 cybersecurity maturity assessment</li>
+                        <li>Partnered with development teams to implement security-by-design principles and shift-left security practices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Specialized Security Training</h3>
+                <div class="training-grid">
+                    <div>
+                        <div class="training-category">
+                            <h4>Security Leadership</h4>
+                            <ul>
+                                <li>GSTRT: Strategic Planning, Policy, and Leadership (SANS)</li>
+                                <li>GSOM: Building and Leading SOCs (SANS)</li>
+                                <li>MGT516: Leading Vuln Management Programs (SANS)</li>
+                            </ul>
+                        </div>
+                        <div class="training-category">
+                            <h4>Offensive Development</h4>
+                            <ul>
+                                <li>Offensive Tool Development (Dark Vortex)</li>
+                                <li>Offensive Development (White Knight Labs)</li>
+                                <li>Malware on Steroids (Dark Vortex)</li>
+                                <li>5 Days Windows Internals (Scorpio Software)</li>
+                            </ul>
+                        </div>
+                        <div class="training-category">
+                            <h4>Adversary Simulation</h4>
+                            <ul>
+                                <li>Dark Side Ops II: Adversary Simulation (NetSPI)</li>
+                                <li>Dark Side Ops I: Malware Dev (NetSPI)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="training-category">
+                            <h4>C2 Operations</h4>
+                            <ul>
+                                <li>Empire Operations II (BC Security)</li>
+                                <li>Empire Operations I (BC Security)</li>
+                            </ul>
+                        </div>
+                        <div class="training-category">
+                            <h4>Cloud Penetration Testing</h4>
+                            <ul>
+                                <li>Incident Response in the Cloud - Azure (DEFCON)</li>
+                                <li>Dark Side Ops: Azure Cloud Pentesting (NetSPI)</li>
+                                <li>Breaching the Cloud 2021 (Antisyphon)</li>
+                                <li>Breaching the Cloud 2020 (WWHF)</li>
+                            </ul>
+                        </div>
+                        <div class="training-category">
+                            <h4>Active Directory Security</h4>
+                            <ul>
+                                <li>Attacking & Defending AD: Advanced (Pentester Academy)</li>
+                                <li>Attacking & Defending Azure AD Cloud (Pentester Academy)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Technical Expertise</h3>
+                <div class="skills-list">
+                    <div class="skill-category">
+                        <strong>Offensive Security & Red Teaming:</strong>
+                        Red Team Infrastructure Design & Operations | Adversarial Simulation & Purple Team Exercises | C2 Frameworks (Metasploit, Covenant, Empire) | Offensive Tool Development (Python, PowerShell, C#) | Penetration Testing (Cloud, Network, Web, Internal) | Attack Path Analysis | Custom Exploit Development
+                    </div>
+                    <div class="skill-category">
+                        <strong>Cloud Security & Architecture:</strong>
+                        Multi-Cloud Security (Azure, AWS, GCP) | Azure Red Team Operations | Cloud-Native Penetration Testing | Azure Sentinel SIEM | Microsoft Defender Suite | Cloud Identity & Access Management | Infrastructure as Code Security (Terraform)
+                    </div>
+                    <div class="skill-category">
+                        <strong>Threat Detection & Response:</strong>
+                        Detection Engineering Partnership | Threat Hunting & Intelligence | SIEM Engineering (Azure Sentinel, MSTICPY) | Incident Response Process Development | Forensic Investigation | Threat Modeling
+                    </div>
+                    <div class="skill-category">
+                        <strong>Leadership & Strategy:</strong>
+                        Offensive Security Program Development | Red Team Strategy & Roadmap | Team Building & Mentorship | Executive Stakeholder Engagement | Vendor Management | Security Governance (NIST, SOC 2, CIS Controls) | MSSP Management
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="scanlines"></div>
 </body>
 </html>
